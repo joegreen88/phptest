@@ -6,6 +6,7 @@
     },
     "require": {
         "smrtr/spawn-point": "~1.1",
-        "smrtr/mysql-version-control": "~1.0"
+        "smrtr/mysql-version-control": "~1.0",
+        "league/container": "~2.0"
     }
 }
