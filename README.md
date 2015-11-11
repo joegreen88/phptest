@@ -1,7 +1,9 @@
 FizzBuzz
 ========
 
-This is the codebase for FizzBuzz, a fictional product review website.
+This is the codebase for FizzBuzz, a small php application with some issues
+that need resolving. This app is built for the purpose of screening PHP
+developer candidates.
 
 ## Requirements
 

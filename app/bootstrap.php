@@ -59,6 +59,10 @@ $app->response = \Symfony\Component\HttpFoundation\Response::create();
 
 $app->container = require_once __DIR__.'/services.php';
 
+// Register error handler
+
+$app->errorHandler = require_once __DIR__.'/error.php';
+
 // Return App
 
 return $app;

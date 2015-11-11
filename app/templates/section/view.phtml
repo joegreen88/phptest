@@ -1,0 +1,24 @@
+<?php include __DIR__.'/../inc/header.phtml'; ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><?= ucfirst(htmlentities($this->section['title'])) ?></h1>
+            <?php if (null === $this->articles): ?>
+                <hr>
+                <p class="lead">Sorry, there are no articles to display in this section.</p>
+            <?php else: ?>
+                <?php foreach ($this->articles as $article): ?>
+                    <hr>
+                    <h3>
+                        <a href="/read/<?= $article['id'] ?>-<?= $article['slug'] ?>">
+                            <?= ucfirst(htmlentities($article['title'])) ?>
+                        </a>
+                    </h3>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+<?php include __DIR__.'/../inc/footer.phtml'; ?>
