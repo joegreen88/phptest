@@ -9,7 +9,11 @@
 
 // Apply php settings
 
-$phpSettings = new \Zend_Config_Ini(APP_PATH.'/config/phpSettings.ini', APP_ENV);
+$phpSettings = new \Zend_Config_Ini(
+    APP_PATH.'/config/phpSettings.ini',
+    APP_ENV,
+    ['nestSeparator' => ':']
+);
 
 foreach ($phpSettings->toArray() as $key => $value) {
     ini_set($key, $value);

@@ -14,3 +14,4 @@ chdir(ROOT_PATH);
 // Common path definitions, these are required
 define('PUBLIC_PATH', ROOT_PATH.'/public');
 define('APP_PATH', ROOT_PATH.'/app');
+define('TEMPLATE_PATH', APP_PATH.'/templates');

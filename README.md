@@ -49,6 +49,14 @@ In `/etc/hosts` (Linux/Mac) or `C:\Windows\System32\drivers\etc\hosts` (Windows)
 Set up a MySQL database called `fizzbuzz` on localhost under user `fizz` with
 password `buzz`.
 
+```
+mysql> create database fizzbuzz;
+```
+
+```
+mysql> grant all privileges on fizzbuzz.* to fizz@localhost identified by 'buzz';
+```
+
 ## 4. build database
 From the project root:
 ```
