@@ -55,6 +55,10 @@ $app->request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 
 $app->response = \Symfony\Component\HttpFoundation\Response::create();
 
+// Register Dependency Injection Container
+
+$app->container = require_once __DIR__.'/services.php';
+
 // Return App
 
 return $app;
