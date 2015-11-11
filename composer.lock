@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e55e57179602f1fbb0cd846bdcc012de",
-    "content-hash": "06dd87684c2885c8968e386c6089e63a",
+    "hash": "570e83ac46003b8dd35745b2c6145055",
+    "content-hash": "48977fc1e5d7b8843c04f82f4c83a8b7",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -293,16 +293,16 @@
         },
         {
             "name": "smrtr/spawn-point",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smrtr/spawn-point.git",
-                "reference": "e86ce1dc4e9613df46ee79ee2020c6403c003f7a"
+                "reference": "ac016e2da788bac8ea1c9b4b195452018ddd65f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smrtr/spawn-point/zipball/e86ce1dc4e9613df46ee79ee2020c6403c003f7a",
-                "reference": "e86ce1dc4e9613df46ee79ee2020c6403c003f7a",
+                "url": "https://api.github.com/repos/smrtr/spawn-point/zipball/ac016e2da788bac8ea1c9b4b195452018ddd65f4",
+                "reference": "ac016e2da788bac8ea1c9b4b195452018ddd65f4",
                 "shasum": ""
             },
             "require": {
@@ -339,7 +339,7 @@
                 "httpfoundation",
                 "spawn"
             ],
-            "time": "2015-11-10 22:58:50"
+            "time": "2015-11-11 05:12:40"
         },
         {
             "name": "symfony/console",
