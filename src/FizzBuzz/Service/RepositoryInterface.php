@@ -7,4 +7,5 @@ interface RepositoryInterface
     public function findAll();
 
     public function findById($id);
+
 }

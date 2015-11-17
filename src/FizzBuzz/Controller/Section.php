@@ -11,6 +11,10 @@ class Section extends AbstractController
         $sectionsRepository = $this->app->container->get('SectionsRepository');
         $section = $sectionsRepository->findBySlug($slug);
 
+        $menuItems = $sectionsRepository->viewAllSections();
+
+        $this->tpl->menuItems = $menuItems;
+
         if (!is_array($section) or !count($section)) {
             throw new \Exception("Section not found", 404);
         }

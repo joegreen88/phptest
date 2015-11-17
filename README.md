@@ -70,3 +70,6 @@ vendor/bin/up development /path/to/mysql/bin/mysql
 ```
 
 Open `http://fizzbuzz.local` in your browser.
+
+## Notes
+section_id was missing from schema.sql 

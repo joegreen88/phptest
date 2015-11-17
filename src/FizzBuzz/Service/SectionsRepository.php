@@ -61,4 +61,21 @@ class SectionsRepository implements RepositoryInterface
 
         return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function viewAllSections()
+    {
+        $menuItems = null;
+        $sql = "SELECT * FROM sections";
+        $stmt = $this->db->prepare($sql);
+
+        $stmt->execute();
+
+        foreach($stmt->fetchAll(\PDO::FETCH_ASSOC) as $key => $value)
+        {
+            $menuItems .= '<li><a href="/section/' . strtolower($value['title']) . '">' . $value['title'] . '</a></li>';
+        }
+
+        return $menuItems;
+
+    }
 }
