@@ -16,7 +16,17 @@
                 <a class="navbar-brand" href="/"><em>Fizz</em><strong>Buzz</strong></a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="/section/tasks">Tasks</a></li>
+                <?php $sections = $this->container->get('Menu')->getSections(); ?>
+                
+                <?php foreach($sections as $section ): ?>
+                    <?php 
+                        $router= $this->container->get('Router');
+                        $route_url = $router->generate('section', array(
+                            'slug' => $section['slug']
+                        )); 
+                    ?>
+                    <li><a href="<?php echo $route_url; ?>"><?php echo $section['title']; ?></a></li>
+                <?php endforeach; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/phpinfo">phpinfo</a></li>

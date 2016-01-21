@@ -26,6 +26,7 @@ class Section extends AbstractController
             $this->tpl->articles = $articles;
         }
 
-        echo $this->tpl->render('section/view.phtml');
+        $content = $this->tpl->render('section/view.phtml');
+        $this->app->response->setContent( $content );
     }
 }
