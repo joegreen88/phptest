@@ -26,6 +26,7 @@ class Homepage extends AbstractController
 
     public function handle404()
     {
+        
         $this->app->response->setStatusCode(404);
         
         $this->tpl->uri = $this->getRoutedParam('uri');
