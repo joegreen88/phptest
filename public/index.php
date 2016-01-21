@@ -19,6 +19,7 @@ else {
     define('APP_ENV', getenv('APP_ENV') ?: 'testing');
 }
 
+
 // Autoloader (requires composer install)
 
 require_once ROOT_PATH.'/vendor/autoload.php';
