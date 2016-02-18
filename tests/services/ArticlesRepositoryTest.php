@@ -10,7 +10,7 @@ class ArticlesRepositoryTest extends PHPUnit_Framework_TestCase
      */
     private $articleService;
 
-    public function __construct()
+    public function setup()
     {
         $this->articleService = new \FizzBuzz\Service\ArticlesRepository();
     }
@@ -33,9 +33,12 @@ class ArticlesRepositoryTest extends PHPUnit_Framework_TestCase
     public function testArticleExists($slug, $expected)
     {
         $articleArray = $this->getArticle();
+        if (is_null($slug)) {
+            $slug = $articleArray['slug'];
+        }
 
-        $slug = $articleArray['slug'];
         $id = $articleArray['id'];
+
         $outcome = $this->articleService->articleExist($id, $slug);
 
         $this->assertInternalType('array', $articleArray);
