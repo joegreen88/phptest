@@ -23,6 +23,9 @@ class Article extends AbstractController
         if (!is_array($articleModel) or !count($articleModel)) {
             throw new \Exception("Article not found", 404);
         }
+
+        $this->setSectionsNav();
+
         $this->tpl->article = $articleModel;
         echo $this->tpl->render('article/view.phtml');
     }

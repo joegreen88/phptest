@@ -41,7 +41,7 @@ class SectionsRepository implements RepositoryInterface
         $stmt = $this->db->prepare($sql);
         $stmt->execute($params);
 
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
     public function findById($id)

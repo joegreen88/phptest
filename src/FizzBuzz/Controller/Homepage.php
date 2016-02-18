@@ -16,6 +16,8 @@ class Homepage extends AbstractController
             $this->tpl->articles = null;
         }
 
+        $this->setSectionsNav();
+
         echo $this->tpl->render('homepage.phtml');
     }
 

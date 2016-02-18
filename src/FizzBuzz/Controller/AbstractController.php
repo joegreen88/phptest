@@ -33,4 +33,11 @@ abstract class AbstractController extends SpawnAbstractController
         header("location: $uri");
         exit();
     }
+
+    protected function setSectionsNav()
+    {
+        $sectionsRepository = $this->app->container->get('SectionsRepository');
+        $sections = $sectionsRepository->findAll();
+        $this->tpl->sections = $sections;
+    }
 }
