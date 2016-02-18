@@ -6,19 +6,27 @@ class Article extends AbstractController
 {
     public function view()
     {
-        $articleID = (int) $this->getRoutedParam('id');
-        if (!$articleID) {
+        $articleId = (int) $this->getRoutedParam('id');
+        $articleSlug = $this->getRoutedParam('slug');
+
+        if (!$articleId) {
             throw new \Exception("Article ID is invalid", 404);
         }
 
         $articlesRepository = $this->app->container->get('ArticlesRepository');
-        $article = $articlesRepository->findById($articleID);
+        $articleModel = $articlesRepository->findById($articleId);
 
-        if (!is_array($article) or !count($article)) {
+        if (!$articlesRepository->articleExist($articleId, $articleSlug)) {
+            return $this->redirect('read/'. $articleModel['id'] .'-'.$articleModel['slug']);
+        }
+
+        if (!is_array($articleModel) or !count($articleModel)) {
             throw new \Exception("Article not found", 404);
         }
 
-        $this->tpl->article = $article;
+        $this->setSectionsNav();
+
+        $this->tpl->article = $articleModel;
         echo $this->tpl->render('article/view.phtml');
     }
 }

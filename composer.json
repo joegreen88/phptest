@@ -7,6 +7,7 @@
     "require": {
         "smrtr/spawn-point": "~1.2",
         "smrtr/mysql-version-control": "~1.0",
-        "league/container": "~2.0"
+        "league/container": "~2.0",
+        "phpunit/phpunit": "5.2.*"
     }
 }

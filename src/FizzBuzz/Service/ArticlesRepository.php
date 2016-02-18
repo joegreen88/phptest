@@ -15,7 +15,7 @@ class ArticlesRepository implements RepositoryInterface
      * @var string[] Fields that we are allowed to search on in findAll()
      */
     protected static $searchParams = [
-        'section_id'
+        'section_id', 'slug', 'id'
     ];
 
     public function __construct()
@@ -53,5 +53,21 @@ class ArticlesRepository implements RepositoryInterface
         $stmt->execute(['id' => $id]);
 
         return $stmt->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * @param $id
+     * @param $slug
+     *
+     * @return bool
+     */
+    public function articleExist($id, $slug)
+    {
+        return (bool) $this->_findBySlugAndId($id, $slug);
+    }
+
+    private function _findBySlugAndId($id, $slug)
+    {
+        return $this->findAll(['id' => $id, 'slug' => $slug]);
     }
 }
